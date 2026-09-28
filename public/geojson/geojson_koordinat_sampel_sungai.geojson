@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "geojson_koordinat_sampel_sungai",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"xy_coordinate_resolution": 1e-15,
+"features": [
+{"type":"Feature","properties":{"Kode":4,"Lokasi":"Sumowono","Pb":"1,0,936"},"geometry":{"type":"Point","coordinates":[110.304632187396251,-7.23417596810783]}},
+{"type":"Feature","properties":{"Kode":30,"Lokasi":"Lanjan","Pb":"1,0,99"},"geometry":{"type":"Point","coordinates":[110.317481530636186,-7.224498890898166]}},
+{"type":"Feature","properties":{"Kode":21,"Lokasi":"Bumen","Pb":"0.856"},"geometry":{"type":"Point","coordinates":[110.317599720835901,-7.212116115114732]}},
+{"type":"Feature","properties":{"Kode":17,"Lokasi":"Piyanggang","Pb":"0.897"},"geometry":{"type":"Point","coordinates":[110.301790909001568,-7.202784693676922]}},
+{"type":"Feature","properties":{"Kode":16,"Lokasi":"Trayu","Pb":"0.983"},"geometry":{"type":"Point","coordinates":[110.298515559465798,-7.224162584645685]}},
+{"type":"Feature","properties":{"Kode":9,"Lokasi":"Pledokan","Pb":"1.053"},"geometry":{"type":"Point","coordinates":[110.28707175278106,-7.215262462615375]}}
+]
+}
