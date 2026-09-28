@@ -27,9 +27,12 @@ body {
 }
 
 .desa-label {
-  background: transparent !important;
+  background: none !important;
+  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
   color: #ffffff !important;
   font-size: 11px !important;
   font-weight: 700 !important;
@@ -37,8 +40,12 @@ body {
   letter-spacing: 0.5px !important;
   text-shadow: 0 0 3px #000, 0 0 5px #000, 1px 1px 2px #000, -1px -1px 2px #000 !important;
   pointer-events: none !important;
+  user-select: none !important;
 }
 
-.desa-label::before {
+.desa-label::before,
+.desa-label::after {
   display: none !important;
+  border: none !important;
+  content: none !important;
 }

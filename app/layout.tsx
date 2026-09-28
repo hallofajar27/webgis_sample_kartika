@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "WebGIS Survei Sayuran & Sungai — Kec. Sumowono",
   description: "Peta sebaran sampel sayuran dan sungai hasil survei logam berat (Pb, Cd) di Kecamatan Sumowono, Kabupaten Semarang",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

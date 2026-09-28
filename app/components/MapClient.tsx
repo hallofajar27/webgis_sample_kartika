@@ -67,39 +67,31 @@ function InvalidateSize() {
   return null;
 }
 
-// Fit map bounds to sample points (sayuran + sungai) once loaded
+// Fit map bounds directly to vegetable sample points once loaded
 function FitBoundsToSamples({
   sayuran,
-  sungaiSampel,
 }: {
   sayuran: GeoJSONData | null;
-  sungaiSampel: GeoJSONData | null;
+  sungaiSampel?: GeoJSONData | null;
 }) {
   const map = useMap();
 
   useEffect(() => {
-    if (!sayuran && !sungaiSampel) return;
+    if (!sayuran || sayuran.features.length === 0) return;
 
     const coords: [number, number][] = [];
-
-    const extractCoords = (data: GeoJSONData | null) => {
-      if (!data) return;
-      data.features.forEach((f) => {
-        if (f.geometry.type === 'Point') {
-          const [lon, lat] = f.geometry.coordinates;
-          coords.push([lat, lon]);
-        }
-      });
-    };
-
-    extractCoords(sayuran);
-    extractCoords(sungaiSampel);
+    sayuran.features.forEach((f) => {
+      if (f.geometry.type === 'Point') {
+        const [lon, lat] = f.geometry.coordinates;
+        coords.push([lat, lon]);
+      }
+    });
 
     if (coords.length > 0) {
       const bounds = L.latLngBounds(coords);
-      map.fitBounds(bounds, { padding: [40, 40] });
+      map.fitBounds(bounds, { padding: [50, 50] });
     }
-  }, [map, sayuran, sungaiSampel]);
+  }, [map, sayuran]);
 
   return null;
 }
@@ -243,7 +235,7 @@ export default function MapClient() {
       <MapContainer center={CENTER} zoom={13} style={{ height: '100%', width: '100%' }}>
         <InvalidateSize />
         <FitBoundsToSamples sayuran={layers.sayuran} sungaiSampel={layers.sungaiSampel} />
-        <LayersControl position="topright">
+        <LayersControl position="topright" >
           <LayersControl.BaseLayer checked name="Google Satellite">
             <TileLayer
               attribution="&copy; Google"
